@@ -12,6 +12,8 @@ app.get("/" , (req,res)=>{
 });
 
 
+
+
 mongoose.connect(mongoDBURL).then(()=>{
     console.log("App is connected to DB ");
     
