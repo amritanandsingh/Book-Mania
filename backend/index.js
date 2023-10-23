@@ -1,17 +1,19 @@
-import express from "express";
+import express, { response } from "express";
 import mongoose from "mongoose";
-
+import { Book } from "./models/bookModel.js";
 import { PORT , mongoDBURL} from "./config.js";
+import booksRouter from "./routes/booksRouts.js";
 
 const app = express();
 
+app.use(express.urlencoded());
+
 app.get("/" , (req,res)=>{
     console.log(req);
-
     return res.status(234).send("Welcome is MERN Stack Tutorial");
 });
 
-
+app.use("/books", booksRouter);
 
 
 mongoose.connect(mongoDBURL).then(()=>{
