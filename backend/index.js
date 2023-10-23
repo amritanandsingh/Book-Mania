@@ -3,10 +3,12 @@ import mongoose from "mongoose";
 import { Book } from "./models/bookModel.js";
 import { PORT , mongoDBURL} from "./config.js";
 import booksRouter from "./routes/booksRouts.js";
+import cors from 'cors' ;
 
 const app = express();
 
 app.use(express.urlencoded());
+app.use(cors());
 
 app.get("/" , (req,res)=>{
     console.log(req);
@@ -14,6 +16,7 @@ app.get("/" , (req,res)=>{
 });
 
 app.use("/books", booksRouter);
+
 
 
 mongoose.connect(mongoDBURL).then(()=>{
