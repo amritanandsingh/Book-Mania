@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import CreateBook from "./pages/CreateBooks";
 import ShowBook from "./pages/ShowBook";
-import EditBooks from "./pages/EditBook";
+import EditBook from "./pages/EditBook";
 import DeleteBooks from "./pages/DeleteBook";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <Route path="/" element={ <Home/>}/>
       <Route path="/books/create" element={<CreateBook/>}/>
       <Route path="/books/details/:id" element={<ShowBook/>}/>
-      <Route path="/books/edit/:id" element={ <EditBooks/> }/>
+      <Route path="/books/edit/:id" element={ <EditBook/> }/>
       <Route path="/books/delete/:id" element={ <DeleteBooks/> }/>
       
     </Routes>
